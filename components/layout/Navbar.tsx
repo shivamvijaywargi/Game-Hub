@@ -3,7 +3,7 @@ import ModeToggle from './ThemeToggle';
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="flex justify-between items-center">
       <ModeToggle />
     </div>
   );
