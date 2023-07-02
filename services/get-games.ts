@@ -1,5 +1,4 @@
-import { AxiosError } from 'axios';
-import apiClient from './api-client';
+import apiClient, { AxiosError } from './api-client';
 
 interface IGame {
   id: number;
@@ -12,8 +11,13 @@ interface IFetchGamesResp {
 }
 
 const getGames = async () => {
+  const controller = new AbortController();
+  const signal = controller.signal;
+
   try {
-    const resp = await apiClient.get<IFetchGamesResp>('/games');
+    const resp = await apiClient.get<IFetchGamesResp>('/games', {
+      signal,
+    });
 
     if (resp.status !== 200) {
       throw new Error('Failed to fetch games.');
@@ -21,8 +25,17 @@ const getGames = async () => {
 
     return resp.data.results;
   } catch (error) {
-    if (error instanceof AxiosError) {
+    if ((error as AxiosError).name === 'AbortError') {
+      // Request was aborted
+      console.log('Request aborted');
+    } else if (error instanceof AxiosError) {
+      error.name = 'AbortError';
       throw new Error(error.message || 'Failed to fetch games.');
+    }
+  } finally {
+    // Cancel the request if it is still ongoing
+    if (!signal.aborted) {
+      controller.abort();
     }
   }
 };

@@ -35,10 +35,11 @@ export default function Error({
               >
                 Try again
               </Button>
-              <Link href="/contact">
-                <Button variant={'outline'}>Contact support</Button>
+              <Link href="/">
+                <Button variant={'outline'}>Go back Home</Button>
               </Link>
             </div>
+            <p>Contact support if the issue persists.</p>
           </div>
         </div>
       </main>
