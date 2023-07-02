@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios';
 import apiClient from './api-client';
 
 interface IGame {
@@ -11,13 +12,19 @@ interface IFetchGamesResp {
 }
 
 const getGames = async () => {
-  const resp = await apiClient.get<IFetchGamesResp>('/games');
+  try {
+    const resp = await apiClient.get<IFetchGamesResp>('/games');
 
-  if (resp.status !== 200) {
-    console.log('Failes to fetch data');
+    if (resp.status !== 200) {
+      throw new Error('Failed to fetch games.');
+    }
+
+    return resp.data.results;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      throw new Error(error.message || 'Failed to fetch games.');
+    }
   }
-
-  return resp.data.results;
 };
 
 export default getGames;

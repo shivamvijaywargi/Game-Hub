@@ -8,7 +8,7 @@ const GameGrid = async () => {
 
   return (
     <ul>
-      {gameData.map((game) => (
+      {gameData?.map((game) => (
         <h2 key={game.id}>{game.name}</h2>
       ))}
     </ul>
