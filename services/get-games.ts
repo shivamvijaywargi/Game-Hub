@@ -1,10 +1,11 @@
 import apiClient, { AxiosError, CanceledError } from './api-client';
 
-interface IPlatform {
+export interface IPlatform {
   id: number;
   name: string;
   slug: string;
 }
+
 export interface IGame {
   id: number;
   name: string;
