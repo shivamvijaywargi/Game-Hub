@@ -1,8 +1,9 @@
-import apiClient, { AxiosError } from './api-client';
+import apiClient, { AxiosError, CanceledError } from './api-client';
 
-interface IGame {
+export interface IGame {
   id: number;
   name: string;
+  background_image: string;
 }
 
 interface IFetchGamesResp {
@@ -25,6 +26,7 @@ const getGames = async () => {
 
     return resp.data.results;
   } catch (error) {
+    if (error instanceof CanceledError) return;
     if ((error as AxiosError).name === 'AbortError') {
       // Request was aborted
       console.log('Request aborted');
