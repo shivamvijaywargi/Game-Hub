@@ -70,6 +70,12 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      gridTemplateColumns: {
+        'auto-1': 'repeat(1, minmax(0, auto))',
+        'auto-2': 'repeat(2, minmax(0, auto))',
+        'auto-3': 'repeat(3, minmax(0, auto))',
+        'auto-4': 'repeat(4, minmax(0, auto))',
+      },
     },
   },
   plugins: [

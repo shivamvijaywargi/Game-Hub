@@ -1,9 +1,15 @@
 import apiClient, { AxiosError, CanceledError } from './api-client';
 
+interface IPlatform {
+  id: number;
+  name: string;
+  slug: string;
+}
 export interface IGame {
   id: number;
   name: string;
   background_image: string;
+  parent_platforms: { platform: IPlatform }[];
 }
 
 interface IFetchGamesResp {
