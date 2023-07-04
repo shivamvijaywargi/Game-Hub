@@ -75,6 +75,7 @@ module.exports = {
         'auto-2': 'repeat(2, minmax(0, auto))',
         'auto-3': 'repeat(3, minmax(0, auto))',
         'auto-4': 'repeat(4, minmax(0, auto))',
+        'auto-5': 'repeat(5, minmax(0, auto))',
       },
     },
   },
