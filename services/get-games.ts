@@ -1,4 +1,3 @@
-import apiClient, { AxiosError, CanceledError } from './api-client';
 import getData from './get-data';
 
 export interface IPlatform {

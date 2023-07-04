@@ -1,5 +1,4 @@
-import getData from '@/services/get-data';
-import getGenres, { IGenre } from '@/services/get-genres';
+import getGenres from '@/services/get-genres';
 import React from 'react';
 
 const GenreList = async () => {
