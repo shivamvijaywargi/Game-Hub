@@ -10,13 +10,13 @@ const Loading = () => {
       <aside className="hidden lg:block space-y-3 p-4">
         {skeletons.map((skeleton) => (
           <Skeleton
-            className="w-52 h-4 bg-zinc-200 dark:bg-zinc-500"
+            className="w-36 h-4 bg-zinc-200 dark:bg-zinc-500"
             key={skeleton}
           />
         ))}
       </aside>
       <div className="p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-auto-1 sm:grid-cols-auto-2 lg:grid-cols-auto-3 xl:grid-cols-auto-4 2xl:grid-cols-auto-5 gap-4">
           {skeletons.map((skeleton) => (
             <div
               className="self-stretch bg-gray-100 dark:bg-zinc-800 rounded-lg "
