@@ -22,7 +22,7 @@ const Loading = () => {
               className="self-stretch bg-gray-100 dark:bg-zinc-800 rounded-lg "
               key={skeleton}
             >
-              <Skeleton className="h-[230px] min-w-[245px] w-full bg-zinc-200 dark:bg-zinc-500" />
+              <Skeleton className="h-[200px] min-w-[240px] w-full bg-zinc-200 dark:bg-zinc-500" />
               <div className="p-2">
                 <Skeleton className="w-52 h-4 bg-zinc-200 dark:bg-zinc-500" />
                 <div className="flex justify-between items-center mt-2">

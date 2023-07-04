@@ -14,9 +14,9 @@ const GameCard = ({ game }: IProps) => {
       <Image
         src={game.background_image}
         alt={game.name}
-        width={700}
-        height={300}
-        className="object-contain rounded-t-lg"
+        width={400}
+        height={250}
+        className="object-cover rounded-t-lg aspect-square h-44"
         loading="lazy"
       />
       <div className="p-2">
