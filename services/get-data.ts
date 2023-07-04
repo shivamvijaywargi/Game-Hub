@@ -5,6 +5,12 @@ interface IFetchResponse<T> {
   results: T[];
 }
 
+/**
+ * Retrieves data from the specified endpoint.
+ *
+ * @param {string} endpoint - The endpoint to retrieve data from.
+ * @return {Promise<T[]>} - A promise that resolves to an array of data.
+ */
 const getData = async <T>(endpoint: string) => {
   const controller = new AbortController();
   const signal = controller.signal;
