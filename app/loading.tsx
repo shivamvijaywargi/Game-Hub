@@ -9,14 +9,14 @@ const Loading = () => {
     <main className="grid grid-cols-auto-1 sm:grid-cols-auto-2">
       <aside className="hidden lg:block space-y-3 p-4">
         {skeletons.map((skeleton) => (
-          <Skeleton
-            className="w-36 h-4 bg-zinc-200 dark:bg-zinc-500"
-            key={skeleton}
-          />
+          <div className="flex items-center gap-2" key={skeleton}>
+            <Skeleton className="w-10 h-7 rounded-md" />
+            <Skeleton className="w-36 h-4 bg-zinc-200 dark:bg-zinc-500" />
+          </div>
         ))}
       </aside>
       <div className="p-4">
-        <div className="grid grid-cols-auto-1 sm:grid-cols-auto-2 lg:grid-cols-auto-3 xl:grid-cols-auto-4 2xl:grid-cols-auto-5 gap-4">
+        <div className="grid grid-cols-auto-1 sm:grid-cols-auto-2 lg:grid-cols-auto-3 xl:grid-cols-auto-4 gap-4">
           {skeletons.map((skeleton) => (
             <div
               className="self-stretch bg-gray-100 dark:bg-zinc-800 rounded-lg "

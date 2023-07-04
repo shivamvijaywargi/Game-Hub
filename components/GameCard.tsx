@@ -16,12 +16,12 @@ const GameCard = ({ game }: IProps) => {
         alt={game.name}
         width={400}
         height={250}
-        className="object-cover rounded-t-lg aspect-square h-44"
+        className="object-cover rounded-t-lg aspect-square h-44 w-full"
         loading="lazy"
       />
       <div className="p-2">
         <h2 className="text-xl">{game.name}</h2>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center space-x-2">
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
